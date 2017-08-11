@@ -8,6 +8,5 @@ jobs:
       - echo "siguen los tests!!!"
 test:
   override:
-    - mkdir -p $CIRCLE_TEST_REPORTS/test-reports/
-    - phpunit --testdox-html $CIRCLE_TEST_REPORTS/test-reports/index.html --bootstrap Email.php Emailtest.php 
+    - phpunit --bootstrap Email.php Emailtest.php 
  
