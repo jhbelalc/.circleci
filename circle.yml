@@ -5,8 +5,14 @@ jobs:
        - image: circleci/php:5.6
      steps:
        - checkout
+       
+      - store_artifacts:
+          path: test-reports/
+          destination: tr1
+      - store_test_results:
+          path: test-reports/       
 test:
   override:
     - mkdir -p $CIRCLE_ARTIFACTS/phpunit
-    - phpunit --bootstrap Email.php Emailtest.php --testdox-html $CIRCLE_ARTIFACTS/phpunit/index.html 
+    - phpunit --testdox-html $CIRCLE_ARTIFACTS/phpunit/index.html --bootstrap Email.php Emailtest.php 
     - echo "hola"
