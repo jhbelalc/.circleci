@@ -5,13 +5,13 @@ jobs:
        - image: circleci/php:5.6
      steps:
        - checkout
-  artifacts:
-      - "test.txt"
 test:
   override:
     - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
-    - phpunit --testdox-html $CIRCLE_TEST_REPORTS/phpunit/index.html --bootstrap Email.php Emailtest.php
-    - tests 
-    - 
-    - echo "hola"+5
+    - phpunit --bootstrap Email.php Emailtest.php --testdox-html $CIRCLE_TEST_REPORTS/phpunit/index.html 
+    - echo "hola"
+  post:
+    - mkdir $CIRCLE_ARTIFACTS/phpunit
+    - mv solo/target/*.html $CIRCLE_ARTIFACTS/phpunit
+
     
