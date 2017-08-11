@@ -13,6 +13,7 @@ jobs:
           path: test-reports/       
 test:
   override:
-    - mkdir -p $CIRCLE_ARTIFACTS/phpunit
-    - phpunit --testdox-html $CIRCLE_ARTIFACTS/phpunit/index.html --bootstrap Email.php Emailtest.php 
+    - mkdir -p $CIRCLE_TEST_REPORTS/test-reports
+    - mkdir -p $CIRCLE_ARTIFACTS/test-reports
+    - phpunit --testdox-html $CIRCLE_ARTIFACTS/test-reports/index.html --bootstrap Email.php Emailtest.php 
     - echo "hola"
