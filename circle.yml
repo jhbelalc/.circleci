@@ -9,5 +9,5 @@ jobs:
 test:
   override:
     - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
-    - phpunit --log-xxjunit $CIRCLE_TESTx_REPORTS/phpunit/junit.xml --bootstrap xxEmail.php xxEmailtest.php
+    - phxpunitx --log-junit $CIRCLE_TESTx_REPORTS/phpunit/junit.xml --bootstrap Email.php Emailtest.php
     
