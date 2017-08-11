@@ -5,7 +5,6 @@ jobs:
        - image: circleci/php:5.6
      steps:
        - checkout
-      - echo "siguen los tests!!!"
 test:
   override:
     - phpunit --bootstrap Email.php Emailtest.php 
