@@ -8,7 +8,7 @@ jobs:
 test:
   override:
     - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
-    - phxpunitx --log-junit $CIRCLE_TESTx_REPORTS/phpunit/junit.xml --bootstrap tests 
+    - phxpunit --testdox-html $CIRCLE_TESTx_REPORTS/phpunit/index.html --bootstrap tests 
     - Email.php Emailtest.php
     - echo "hola"+5
     
