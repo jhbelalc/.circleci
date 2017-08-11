@@ -7,11 +7,6 @@ jobs:
        - checkout
 test:
   override:
-    - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
-    - phpunit --bootstrap Email.php Emailtest.php --testdox-html $CIRCLE_TEST_REPORTS/phpunit/index.html 
+    - mkdir -p $CIRCLE_ARTIFACTS/phpunit
+    - phpunit --bootstrap Email.php Emailtest.php --testdox-html $CIRCLE_ARTIFACTS/phpunit/index.html 
     - echo "hola"
-  post:
-    - mkdir $CIRCLE_ARTIFACTS/phpunit
-    - mv solo/target/*.html $CIRCLE_ARTIFACTS/phpunit
-
-    
