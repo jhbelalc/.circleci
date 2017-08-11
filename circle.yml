@@ -8,6 +8,6 @@ jobs:
        - run: echo "hello world"
 test:
   override:
-    - phpunit --bootstrap Email.php Emailtest.php
-- store_test_results:
-    path: /tmp/test-results
+    - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
+    - phpunit --log-junit $CIRCLE_TEST_REPORTS/phpunit/junit.xml --bootstrap Email.php Emailtest.php
+    
